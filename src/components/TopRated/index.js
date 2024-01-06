@@ -3,6 +3,7 @@ import Loader from 'react-loader-spinner'
 
 import MovieCard from '../MovieCard'
 import NavBar from '../NavBar'
+import Pagination from '../Pagination'
 
 import './index.css'
 
@@ -67,6 +68,10 @@ class TopRated extends React.Component {
             ? this.renderLoadingView()
             : this.renderPopularMoviesList()}
         </div>
+        <Pagination
+          totalPages={topRatedMovieResponse.totalPages}
+          apiCallback={this.getTopRatedMoviesResponse}
+        />
       </>
     )
   }
